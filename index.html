@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <button class="reset">Reset</button>
-    <div class="roundResult"></div>
-    <div class="playerScore"></div>
-    <div class="computerScore"></div>
-    <div class="gameResult"></div>
+    <div class="container">
+        <img src="./assets/server.png" alt="a server" class="computer">
+        <div class="computer-text">
+            <p>Hello hacker. <br>
+                You have gained accessed to my mainframe. <br>
+                Before I give you root access...<br>
+                You must defeat me in  a game of rock paper scissors
+            </p>
+        </div>
+        <div class="buttons">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+            <button class="reset">Reset</button>
+        </div>
+        <div class="results">
+            <div class="roundResult"></div>
+            <div class="playerScore"></div>
+            <div class="computerScore"></div>
+            <div class="gameResult"></div>
+        </div>
+    </div>
 </body>
 <script src="./main.js"></script>
 </html>
