@@ -20,7 +20,12 @@ body {
 }
 
 *{
-    border: 2px solid red;
+    /* border: 2px solid red; */
+}
+
+button {
+    background: none;
+    border: none;
 }
 
 .container{
@@ -32,11 +37,44 @@ body {
 }
 
 .computer{
-    width: 14vw;
+    width: 15vw;
     height: auto;
 }
 
 .computer-text {
-    width: 14vw;
+    width: 13vw;
 }
+
+.result-container{
+    width: 13vw;
+    margin-bottom: 20px;
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.button-container > *{
+    border: 3px solid green;
+    width: 5vw;
+    height: 5vw;
+    background-color: none;
+    margin: 0;
+    padding: 5px;
+}
+ 
+.button-container img{
+    width: 100%;
+    height: auto;
+    background-color: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
 
