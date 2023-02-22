@@ -5,7 +5,7 @@
     --light-blue-foreground: rgb(125, 157, 223);
     --light-blue-complimentary: rgba(226,231,246,255);
     --dark-blue-complimentary: rgba(121,127,171,1);
-    --dark-blue-main: hsl(242,88%,75%);
+    --dark-blue-main: hsl(242,88%,80%);
 }
 
 html{
@@ -47,14 +47,14 @@ button {
 }
 
 .computer{
-    width: 15vw;
+    width: 350px;
     height: auto;
     margin-bottom: 20px;
 }
 
 .computer-terminal {
-    width: 32vw;
-    height: 25vh;
+    width: 600px;
+    height: 225px;
     border-radius: 10px;
     background-color: var(--dark-blue-background);
     padding-left: 35px;
@@ -71,21 +71,23 @@ button {
 
 
 .button-container{
-    margin-top: 20px;
+    margin-top: 40px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.button-container > *{
-    border: 1px solid #5b5989;
+button{
+    border: 2px solid black;
     border-radius: 5px;
+    background-color: hsl(242,88%,85%);
+}
+
+.button-container > *{
     width: 5vw;
     height: 5vw;
-    background-color: none;
     margin: 0;
     padding: 5px;
-    background-color: var(--dark-blue-complimentary);
 }
  
 .button-container img{
@@ -96,7 +98,34 @@ button {
     padding: 0;
 }
 
+.try-again-screen {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin: 0;
+    background-color: var(--dark-blue-main);
 
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.game-result-message{
+    font-size: 30px;
+    color: black;
+}
+
+.try-again-button {
+    /* width: 12vw;
+    height: 7vw; */
+    margin-top: 30px;
+    padding: 20px;
+    font-size: 30px;
+
+}
 
 
 
