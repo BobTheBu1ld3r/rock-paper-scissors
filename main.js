@@ -27,6 +27,10 @@ function resetGame() {
     playerScore = 0;
     computerScore = 0;
     tryAgainScreen.style.display = "none";
+    selectionMessage.textContent = "";
+    roundResultMessage.textContent = "";
+    scoreMessage.textContent = "";
+
 }
 
 function getComputerSelection() {
@@ -51,7 +55,7 @@ function playGame(clickEvent) {
     
     const playerSelection = clickEvent.target.getAttribute("class");
 
-    if(playerSelection === "try-again-button") resetGame();
+    if(playerSelection === "try-again-button") return resetGame();
 
     const computerSelection = getComputerSelection();
     const outcome = findOutcome(playerSelection, computerSelection);
