@@ -1,3 +1,6 @@
+const BUTTON_DELAY = 550;
+
+
 const computerText = document.querySelector(".computer-text");
 
 const buttons = document.querySelectorAll("button");
@@ -56,6 +59,16 @@ setTimeout(()=>{
                     computerMessages[3].classList.toggle("typing");
                     computerMessages[4].classList.toggle("typing");
                     type(computerMessages[4]);
+                    setTimeout(()=>{
+                        computerMessages[4].classList.toggle("typing");
+                        buttons[0].classList.toggle("hidden");
+                        setTimeout(()=>{
+                            buttons[1].classList.toggle("hidden");
+                            setTimeout(()=>{
+                                buttons[2].classList.toggle("hidden");
+                            }, BUTTON_DELAY)
+                        }, BUTTON_DELAY);
+                    }, computeTimeout(computerMessages[4])+BUTTON_DELAY);
                 }, computeTimeout(computerMessages[3]));
             }, computeTimeout(computerMessages[2]));
         },computeTimeout(computerMessages[1]));
