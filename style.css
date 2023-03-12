@@ -46,6 +46,10 @@ button {
 
 }
 
+.container > * {
+    flex-shrink: 1;
+}
+
 .computer{
     width: 350px;
     height: auto;
@@ -89,8 +93,8 @@ button:hover{
 }
 
 .button-container > *{
-    width: 5vw;
-    height: 5vw;
+    width: 100px;
+    height: 100px;
     margin: 0;
     padding: 5px;
 }
@@ -133,7 +137,11 @@ button:hover{
 
 }
 
+.typing::after{
+    content:"_";
+    background-color: var(--light-blue-foreground);
 
+}
 
 
 
