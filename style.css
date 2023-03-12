@@ -127,6 +127,11 @@ button:hover{
     color: black;
 }
 
+.scoreMessage{
+    background-color: var(--light-blue-foreground);
+    color: var(--dark-blue-background);
+}
+
 .try-again-button {
     /* width: 12vw;
     height: 7vw; */
@@ -143,6 +148,6 @@ button:hover{
 
 }
 
-
-
-
+.hidden {
+    display: none;
+}
