@@ -1,3 +1,5 @@
+const computerText = document.querySelector(".computer-text");
+
 const buttons = document.querySelectorAll("button");
 const selectionMessage = document.querySelector(".selectionMessage")
 const roundResultMessage = document.querySelector(".roundResultMessage");
@@ -7,7 +9,63 @@ const tryAgainScreen = document.querySelector(".try-again-screen")
 const gameResultMessage =  document.querySelector(".game-result-message");
 const tryAgainButton =  document.querySelector(".try-again-button");
 
-console.log(document);
+
+const computerMessages = document.querySelectorAll(".computer-declaration");
+console.log(computerMessages);
+
+
+function type (element) {
+    const message = element.dataset.message.split("");
+
+    const newInterval = setInterval(function(){
+        if(message.length === 0) return clearInterval(newInterval);
+        element.textContent += message.shift();
+    }, 100);
+}
+
+function erase(element) {
+    const newInterval = setInterval(()=>{
+        element.textContent = element.textContent.slice(0,-1);
+    },50)
+}
+
+
+function computeTimeout (element) {
+    let LETTER_DELAY = 100;
+    let NEWLINE_DELAY = 400;
+    return element.dataset.message.length*LETTER_DELAY*1.1 + NEWLINE_DELAY;
+}
+
+
+setTimeout(()=>{
+    computerMessages[0].classList.toggle("typing");
+    type(computerMessages[0]);
+    setTimeout(()=>{
+        computerMessages[0].classList.toggle("typing");
+        computerMessages[1].classList.toggle("typing");
+        type(computerMessages[1]);
+        setTimeout(()=>{
+            computerMessages[1].classList.toggle("typing");
+            computerMessages[2].classList.toggle("typing");
+            type(computerMessages[2]);
+            setTimeout(()=>{
+                computerMessages[2].classList.toggle("typing");
+                computerMessages[3].classList.toggle("typing");
+                type(computerMessages[3]);
+                setTimeout(()=>{
+                    computerMessages[3].classList.toggle("typing");
+                    computerMessages[4].classList.toggle("typing");
+                    type(computerMessages[4]);
+                }, computeTimeout(computerMessages[3]));
+            }, computeTimeout(computerMessages[2]));
+        },computeTimeout(computerMessages[1]));
+    }, computeTimeout(computerMessages[0]));
+},1000);
+
+
+
+
+
 
 console.log(tryAgainButton.getAttribute("class"));
 
@@ -83,4 +141,3 @@ function findResult() {
     }
     return ["HA, YOU LOST THE GAME.", "Try again"];
 }
-
