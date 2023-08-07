@@ -15,12 +15,12 @@ const tryAgainButton = document.querySelector(".try-again-button");
 
 const computerMessages = document.querySelectorAll(".computer-declaration");
 
-function resetTyping() {
+function removeCursorAll() {
   computerMessages.forEach((el) => el.classList.remove("typing"));
 }
 
 function type(element) {
-  resetTyping();
+  removeCursorAll();
   element.classList.toggle("typing");
   const message = element.dataset.message.split("");
 
