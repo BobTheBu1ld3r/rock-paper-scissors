@@ -1,4 +1,6 @@
-const BUTTON_DELAY = 550;
+const BUTTON_DELAY = 550; // in ms
+const NEWLINE_DELAY = 400; // in ms
+const TYPING_SPEED = 100; // in ms per letter
 
 const computerText = document.querySelector(".computer-text");
 
