@@ -21,8 +21,9 @@ function type(element) {
   return new Promise((resolve, reject) => {
     const newInterval = setInterval(function () {
       if (message.length === 0) {
-        clearInterval(newInterval);
         resolve();
+
+        return clearInterval(newInterval);
       }
       element.textContent += message.shift();
     }, 100);
@@ -48,14 +49,10 @@ function delay(timeDelay) {
 }
 
 delay(1000)
-  .then(() => {
-    type(computerMessages[0]);
-    return delay(1000);
-  })
-  .then(() => {
-    type(computerMessages[1]);
-    return delay(1000);
-  });
+  .then(() => type(computerMessages[0]))
+  .then(() => delay(1000))
+  .then(() => type(computerMessages[1]))
+  .then(() => delay(1000));
 
 // setTimeout(() => {
 //   computerMessages[0].classList.toggle("typing");
