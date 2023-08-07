@@ -1,3 +1,4 @@
+const START_DELAY = 300; // in ms
 const BUTTON_DELAY = 550; // in ms
 const NEWLINE_DELAY = 400; // in ms
 const TYPING_SPEED = 100; // in ms per letter
@@ -42,7 +43,7 @@ function delay(timeDelay) {
   });
 }
 
-delay(1000)
+delay(START_DELAY)
   .then(() => type(computerMessages[0]))
   .then(() => delay(NEWLINE_DELAY))
   .then(() => type(computerMessages[1]))
@@ -57,7 +58,9 @@ delay(1000)
   .then(() => delay(BUTTON_DELAY))
   .then(() => buttons[1].classList.toggle("hidden"))
   .then(() => delay(BUTTON_DELAY))
-  .then(() => buttons[2].classList.toggle("hidden"));
+  .then(() => {
+    buttons[2].classList.toggle("hidden"), removeCursorAll();
+  });
 
 console.log(tryAgainButton.getAttribute("class"));
 
