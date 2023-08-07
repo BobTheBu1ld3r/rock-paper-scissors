@@ -14,7 +14,6 @@ const gameResultMessage = document.querySelector(".game-result-message");
 const tryAgainButton = document.querySelector(".try-again-button");
 
 const computerMessages = document.querySelectorAll(".computer-declaration");
-console.log(computerMessages);
 
 function resetTyping() {
   computerMessages.forEach((el) => el.classList.remove("typing"));
@@ -33,20 +32,8 @@ function type(element) {
         return clearInterval(newInterval);
       }
       element.textContent += message.shift();
-    }, 100);
+    }, TYPING_SPEED);
   });
-}
-
-function erase(element) {
-  const newInterval = setInterval(() => {
-    element.textContent = element.textContent.slice(0, -1);
-  }, 50);
-}
-
-function computeTimeout(element) {
-  let LETTER_DELAY = 100;
-  let NEWLINE_DELAY = 400;
-  return element.dataset.message.length * LETTER_DELAY * 1.1 + NEWLINE_DELAY;
 }
 
 function delay(timeDelay) {
@@ -57,13 +44,13 @@ function delay(timeDelay) {
 
 delay(1000)
   .then(() => type(computerMessages[0]))
-  .then(() => delay(300))
+  .then(() => delay(NEWLINE_DELAY))
   .then(() => type(computerMessages[1]))
-  .then(() => delay(300))
+  .then(() => delay(NEWLINE_DELAY))
   .then(() => type(computerMessages[2]))
-  .then(() => delay(100))
+  .then(() => delay(NEWLINE_DELAY))
   .then(() => type(computerMessages[3]))
-  .then(() => delay(100))
+  .then(() => delay(NEWLINE_DELAY))
   .then(() => type(computerMessages[4]))
   .then(() => delay(BUTTON_DELAY))
   .then(() => buttons[0].classList.toggle("hidden"))
