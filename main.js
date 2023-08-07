@@ -55,49 +55,25 @@ function delay(timeDelay) {
 
 delay(1000)
   .then(() => type(computerMessages[0]))
-  .then(() => delay(1000))
+  .then(() => delay(300))
   .then(() => type(computerMessages[1]))
-  .then(() => delay(1000));
-
-// setTimeout(() => {
-//   computerMessages[0].classList.toggle("typing");
-//   type(computerMessages[0]);
-//   setTimeout(() => {
-//     computerMessages[0].classList.toggle("typing");
-//     computerMessages[1].classList.toggle("typing");
-//     type(computerMessages[1]);
-//     setTimeout(() => {
-//       computerMessages[1].classList.toggle("typing");
-//       computerMessages[2].classList.toggle("typing");
-//       type(computerMessages[2]);
-//       setTimeout(() => {
-//         computerMessages[2].classList.toggle("typing");
-//         computerMessages[3].classList.toggle("typing");
-//         type(computerMessages[3]);
-//         setTimeout(() => {
-//           computerMessages[3].classList.toggle("typing");
-//           computerMessages[4].classList.toggle("typing");
-//           type(computerMessages[4]);
-//           setTimeout(() => {
-//             computerMessages[4].classList.toggle("typing");
-//             buttons[0].classList.toggle("hidden");
-//             setTimeout(() => {
-//               buttons[1].classList.toggle("hidden");
-//               setTimeout(() => {
-//                 buttons[2].classList.toggle("hidden");
-//               }, BUTTON_DELAY);
-//             }, BUTTON_DELAY);
-//           }, computeTimeout(computerMessages[4]) + BUTTON_DELAY);
-//         }, computeTimeout(computerMessages[3]));
-//       }, computeTimeout(computerMessages[2]));
-//     }, computeTimeout(computerMessages[1]));
-//   }, computeTimeout(computerMessages[0]));
-// }, 1000);
+  .then(() => delay(300))
+  .then(() => type(computerMessages[2]))
+  .then(() => delay(100))
+  .then(() => type(computerMessages[3]))
+  .then(() => delay(100))
+  .then(() => type(computerMessages[4]))
+  .then(() => delay(BUTTON_DELAY))
+  .then(() => buttons[0].classList.toggle("hidden"))
+  .then(() => delay(BUTTON_DELAY))
+  .then(() => buttons[1].classList.toggle("hidden"))
+  .then(() => delay(BUTTON_DELAY))
+  .then(() => buttons[2].classList.toggle("hidden"));
 
 console.log(tryAgainButton.getAttribute("class"));
 
 buttons.forEach((button) => {
-  // if(button.getAttribute("class").includes())
+  //   if(button.getAttribute("class").includes())
   button.addEventListener("click", playGame);
 });
 
