@@ -43,26 +43,20 @@ function delay(timeDelay) {
   });
 }
 
-delay(START_DELAY)
-  .then(() => type(computerMessages[0]))
-  .then(() => delay(NEWLINE_DELAY))
-  .then(() => type(computerMessages[1]))
-  .then(() => delay(NEWLINE_DELAY))
-  .then(() => type(computerMessages[2]))
-  .then(() => delay(NEWLINE_DELAY))
-  .then(() => type(computerMessages[3]))
-  .then(() => delay(NEWLINE_DELAY))
-  .then(() => type(computerMessages[4]))
-  .then(() => delay(BUTTON_DELAY))
-  .then(() => buttons[0].classList.toggle("hidden"))
-  .then(() => delay(BUTTON_DELAY))
-  .then(() => buttons[1].classList.toggle("hidden"))
-  .then(() => delay(BUTTON_DELAY))
-  .then(() => {
-    buttons[2].classList.toggle("hidden"), removeCursorAll();
-  });
+async function typingAnimation() {
+  await delay(START_DELAY);
+  for (let message of computerMessages) {
+    await delay(NEWLINE_DELAY);
+    await type(message);
+  }
+  for (let button of buttons) {
+    await delay(BUTTON_DELAY);
+    button.classList.toggle("hidden");
+  }
+  removeCursorAll();
+}
 
-console.log(tryAgainButton.getAttribute("class"));
+typingAnimation();
 
 buttons.forEach((button) => {
   //   if(button.getAttribute("class").includes())
